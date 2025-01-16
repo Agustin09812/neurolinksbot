@@ -769,6 +769,23 @@ section,
   z-index: 2;
 }
 
+.linkbtn {
+  text-decoration: none;
+  list-style-type: none;
+  color: #fff !important;
+}
+
+.btn-light {
+  min-width: 25%;
+  transition: 500ms ease-in-out;
+  background-color: #61a5ec !important;
+  border: none;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
 /*--------------------------------------------------------------
 # Media Queries
 --------------------------------------------------------------*/
