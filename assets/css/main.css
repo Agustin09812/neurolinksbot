@@ -94,21 +94,51 @@ p {
 }
 
 /*--------------------------------------------------------------
+# Back Button
+--------------------------------------------------------------*/
+
+.back-btn {
+  position: fixed;
+  background-color: #c1a45f;
+  width: 3.47rem;
+  height: 3.47rem;
+  top: 31rem;
+  right: 1.875rem;
+  bottom: 1.875rem;
+  z-index: 100;
+  transition: all 500ms ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.back-btn i {
+  color: #1a3844;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+
+/*--------------------------------------------------------------
 # Whatsapp Floating Button
 --------------------------------------------------------------*/
 
 .wsp-btn {
   position: fixed;
-  background-color: #1a3844;
+  background-color: #25d366;
   width: 3.47rem;
   height: 3.47rem;
   right: 1.875rem;
   bottom: 1.875rem;
-  z-index: 1;
+  z-index: 100;
   transition: all 500ms ease;
 
   &:hover {
-    background-color: #25d366;
     transform: scale(1.2);
   }
 }
@@ -518,7 +548,7 @@ section,
 # Call To Action Section
 --------------------------------------------------------------*/
 .call-to-action {
-  padding: 120px 0;
+  padding: 75px 0;
   position: relative;
   clip-path: inset(0);
 }
