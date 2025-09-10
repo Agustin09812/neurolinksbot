@@ -94,51 +94,21 @@ p {
 }
 
 /*--------------------------------------------------------------
-# Back Button
---------------------------------------------------------------*/
-
-.back-btn {
-  position: fixed;
-  background-color: #c1a45f;
-  width: 3.47rem;
-  height: 3.47rem;
-  top: 31rem;
-  right: 1.875rem;
-  bottom: 1.875rem;
-  z-index: 100;
-  transition: all 500ms ease;
-
-  &:hover {
-    transform: scale(1.2);
-  }
-}
-
-.back-btn i {
-  color: #1a3844;
-  font-size: 2rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
-}
-
-
-/*--------------------------------------------------------------
 # Whatsapp Floating Button
 --------------------------------------------------------------*/
 
 .wsp-btn {
   position: fixed;
-  background-color: #25d366;
+  background-color: #25D366;
   width: 3.47rem;
   height: 3.47rem;
   right: 1.875rem;
   bottom: 1.875rem;
-  z-index: 100;
+  z-index: 99;
   transition: all 500ms ease;
 
   &:hover {
+    background-color: #1ca04c;
     transform: scale(1.2);
   }
 }
@@ -151,6 +121,22 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+}
+
+@media (max-width: 471px) {
+  .wsp-btn {
+    width: 2.47rem;
+    height: 2.47rem;
+    right: 0.875rem;
+    bottom: 0.875rem;
+  }
+
+  .wsp-btn i {
+    font-size: 1.35rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 /*--------------------------------------------------------------
@@ -201,6 +187,18 @@ p {
 
 .header .header-social-links a i {
   line-height: 0px;
+}
+
+#back-button {
+  padding: 5px 15px;
+  margin: auto;
+  border-radius: 5px;
+  transition: 500ms;
+}
+
+#back-button:hover {
+  background-color: #61a4ec2c;
+  transform: scale(1.05);
 }
 
 /* Global Header on Scroll
@@ -507,40 +505,50 @@ section,
 }
 
 /*--------------------------------------------------------------
-# wid Section (What i do)
+# beneficios Section
 --------------------------------------------------------------*/
-.wid {
-  background-color: #202733;
+.beneficios {
+  background-color: #51607b1d;
+
 }
 
-.wid .content h3 {
+.beneficios .container-fluid {
+  background-color: #51607b0b;
+}
+
+.beneficios .content {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.beneficios .content h3 {
   font-size: 1.75rem;
   font-weight: 700;
 }
 
-.wid .content ul {
+.beneficios .content ul {
   list-style: none;
   padding: 0;
   color: var(--surface-color);
 }
 
-.wid .content ul li {
+.beneficios .content ul li {
   padding: 10px 0 0 0;
   display: flex;
 }
 
-.wid .content ul i {
+.beneficios .content ul i {
   color: var(--accent-color);
   margin-right: 0.5rem;
   line-height: 1.2;
   font-size: 1.25rem;
 }
 
-.wid .content {
+.beneficios .content {
   color: var(--surface-color);
 }
 
-.wid .content p:last-child {
+.beneficios .content p:last-child {
   margin-bottom: 0;
 }
 
@@ -593,19 +601,19 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Who Section
+# asistants-item Section
 --------------------------------------------------------------*/
 
-.who {
+.asistentes {
   background-color: #202733 !important;
 }
 
-.who .who-item {
+.asistentes .asistentes-item {
   position: relative;
   padding-top: 40px;
 }
 
-.who .who-item:before {
+.asistentes .asistentes-item:before {
   content: "";
   position: absolute;
   top: 0;
@@ -615,7 +623,7 @@ section,
   background: color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
-.who .who-item::after {
+.asistentes .asistentes-item::after {
   content: "";
   position: absolute;
   top: 0;
@@ -626,151 +634,127 @@ section,
   border-right: 5px solid var(--background-color);
 }
 
-.who .who-item .icon {
-  width: 48px;
-  height: 48px;
-  position: relative;
-  margin-right: 50px;
-  line-height: 0;
-}
-
-.who .who-item .icon i {
-  color: color-mix(in srgb, var(--accent-color), transparent 30%);
-  font-size: 56px;
-  transition: ease-in-out 0.3s;
-  z-index: 2;
-  position: relative;
-}
-
-.who .who-item .icon:before {
-  position: absolute;
-  content: "";
-  height: 30px;
-  width: 30px;
-  background: color-mix(in srgb, var(--accent-color), transparent 70%);
-  border-radius: 50px;
-  z-index: 1;
-  bottom: -15px;
-  right: -15px;
-  transition: 0.3s;
-}
-
-.who .who-item .title {
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
-  color: var(--accent-color);
-}
-
-.who .who-item .description {
-  line-height: 24px;
-  font-size: 14px;
-  color: var(--surface-color);
-}
-
-/*--------------------------------------------------------------
-# Why Section
---------------------------------------------------------------*/
-
-.why {
-  position: relative;
+.asistentes .container .row .col-lg-6 .card .card-body {
   background-color: #202733 !important;
 }
 
-.why .section-title {
-  z-index: 10;
-}
-
-.background-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('../img/robot-img (9).jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 1;
-  opacity: 0.15;
-}
-
-.why .container .row {
-  display: flex;
-  justify-content: space-between;
-  z-index: 10;
-}
-
-.why .container .row .col-lg-9 {
-  padding-right: 30px;
-  z-index: 10;
-}
-
-.why .container .row .col-lg-3 {
-  padding-left: 0;
-  display: flex;
-  justify-content: flex-end;
-  z-index: 10;
-}
-
-.why .why-item {
-  position: relative;
-  padding-top: 40px;
-  z-index: 10;
-}
-
-.why .why-item .icon {
-  width: 48px;
-  height: 48px;
-  position: relative;
-  margin-right: 50px;
-  line-height: 0;
-  z-index: 10;
-}
-
-.why .why-item .icon i {
-  color: color-mix(in srgb, var(--accent-color), transparent 30%);
-  font-size: 56px;
-  transition: ease-in-out 0.3s;
-  z-index: 2;
-  position: relative;
-  z-index: 10;
-}
-
-.why .why-item .icon:before {
-  position: absolute;
-  content: "";
-  height: 30px;
-  width: 30px;
-  background: color-mix(in srgb, var(--accent-color), transparent 70%);
-  border-radius: 50px;
-  z-index: 1;
-  bottom: -15px;
-  right: -15px;
-  transition: 0.3s;
-  z-index: 10;
-}
-
-.why .why-item .title {
+.asistentes .container .row .col-lg-6 .card .card-body .title {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
   color: var(--accent-color);
-  z-index: 10;
 }
 
-.why .why-item .description {
+.asistentes .container .row .col-lg-6 .card .card-body .description {
   line-height: 24px;
   font-size: 14px;
   color: var(--surface-color);
-  z-index: 10;
 }
 
+
+.asistentes {
+  background-color: #202733 !important;
+}
+
+.asistentes .asistentes-item {
+  position: relative;
+  padding-top: 40px;
+}
+
+.asistentes .asistentes-item:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.asistentes .asistentes-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--accent-color);
+  border-right: 5px solid var(--background-color);
+}
+
+.asistentes .container .row .col-lg-6 .card .card-body {
+  background-color: #202733 !important;
+}
+
+.asistentes .container .row .col-lg-6 .card .card-body .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: var(--accent-color);
+}
+
+.asistentes .container .row .col-lg-6 .card .card-body .description {
+  line-height: 24px;
+  font-size: 14px;
+  color: var(--surface-color);
+}
+
+.asistentes-rail {
+  --rail-mobile-height: 200px;
+  /* alto de la imagen en mobile */
+  --rail-desktop-width: 140px;
+  /* ancho fijo de la franja en desktop */
+  width: 100%;
+  height: var(--rail-mobile-height);
+  overflow: hidden;
+  background: #0f1420;
+  border-radius: .5rem;
+}
+
+.asistentes-rail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  object-position: center;
+}
+
+@media (min-width: 768px) {
+  .asistentes-rail {
+    width: var(--rail-desktop-width);
+    height: 100%;
+    border-radius: .5rem;
+  }
+}
+
+.asistentes .card {
+  background: transparent;
+}
+
+
 /*--------------------------------------------------------------
-# Inversion Section
+# Chat ia button styles
 --------------------------------------------------------------*/
 
-/* styles goes here */
+#chat-button {
+  color: #fff !important;
+  background: #61a4ec2d !important;
+  transition: 250ms;
+  display: inline-block;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+#chat-button:hover {
+  transform: scale(1) !important;
+  background: #61a5ec !important;
+}
+
+@media (max-width: 471px) {
+  #chat-button {
+    width: 100%;
+  }
+}
 
 /*--------------------------------------------------------------
 # Second Call to action Section
@@ -790,7 +774,7 @@ section,
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #202733be;
+  background-color: #202733e0;
   z-index: 1;
 }
 
@@ -799,20 +783,17 @@ section,
   z-index: 2;
 }
 
-.linkbtn {
-  text-decoration: none;
-  list-style-type: none;
-  color: #fff !important;
-}
-
 .btn-light {
+  color: #fff !important;
+  background: #61a4ec2d !important;
+  transition: 250ms;
   min-width: 25%;
-  transition: 500ms ease-in-out;
-  background-color: #61a5ec !important;
   border: none;
 
   &:hover {
-    transform: scale(1.2);
+    background: #61a5ec !important;
+    color: #202733 !important;
+    transform: scale(1);
   }
 }
 
